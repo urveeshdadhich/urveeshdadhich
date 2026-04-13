@@ -1,0 +1,235 @@
+/* Base Styles & Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #FFB000;
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.5;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+::-webkit-scrollbar-thumb {
+    background: #FFB000;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Window/Block Styling */
+.window {
+    border: 2px solid #FFB000;
+    padding: 20px;
+    position: relative;
+    background: #000000;
+}
+
+/* Grid Positioning */
+#header {
+    grid-column: span 4;
+}
+
+#skills {
+    grid-column: span 2;
+}
+
+#experience {
+    grid-column: span 2;
+}
+
+#projects {
+    grid-column: span 3;
+}
+
+#education {
+    grid-column: span 1;
+}
+
+/* Typography Details */
+h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #FFB000;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.label {
+    font-weight: bold;
+    color: #FFB000;
+    margin-right: 10px;
+}
+
+/* Links & Interactivity */
+a {
+    color: #FFB000;
+    text-decoration: none;
+    padding: 2px 4px;
+}
+
+a:not(.project-folder):hover {
+    background-color: #FFB000;
+    color: #000000;
+}
+
+/* Technical Skills Grid */
+.skill-block {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.skill-category {
+    border: 1px solid rgba(255, 176, 0, 0.2);
+    padding: 10px;
+}
+
+/* Experience Logs */
+.log-entry {
+    margin-bottom: 25px;
+}
+
+.log-header {
+    font-weight: bold;
+    font-size: 1.1rem;
+    background: #FFB000;
+    color: #000000;
+    display: inline-block;
+    padding: 2px 10px;
+    margin-bottom: 5px;
+}
+
+.log-meta {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+ul {
+    list-style-type: "> ";
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.project-folder {
+    border: 1px dashed #FFB000;
+    padding: 15px;
+    display: block; /* Ensure the whole card is clickable */
+    color: #FFB000; /* Force amber color */
+    text-decoration: none;
+}
+
+.project-folder:hover {
+    background-color: rgba(255, 176, 0, 0.1); /* Subtle highlight */
+    border-style: solid; 
+    outline: 1px solid #FFB000;
+}
+
+.project-folder .folder-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #FFB000;
+    text-decoration: underline;
+}
+
+/* Minimal Terminal Prompt */
+.terminal-prompt {
+    margin-top: auto; /* Pushes to bottom */
+    padding-top: 20px;
+    font-size: 0.9rem;
+    color: #FFB000;
+    opacity: 0.9;
+}
+
+.cursor-block {
+    display: inline-block;
+    width: 8px;
+    height: 1.2rem;
+    background-color: #FFB000;
+    vertical-align: middle;
+    margin-left: 2px;
+}
+
+#skills {
+    display: flex;
+    flex-direction: column;
+}
+
+#skills .skill-block {
+    flex-grow: 1; 
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #skills, #experience, #projects, #education {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    #header, #skills, #experience, #projects, #education {
+        grid-column: span 1;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    .skill-block {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Interaction: Hover State Inversion */
+.window:hover {
+    outline: 1px solid #FFB000;
+}
